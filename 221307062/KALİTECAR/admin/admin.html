@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli</title>
+    <link rel="stylesheet" href="admin.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Paneli</h2>
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#users">Kullanıcı Yönetimi</a></li>
+            <li><a href="#cars">Araç Yönetimi</a></li>
+            <li><a href="#settings">Ayarlar</a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <section id="dashboard">
+            <i class="fas fa-home"></i></a>
+
+            <h1>Gösterge Paneli</h1>
+            <div class="stats">
+                <div class="stat">
+                    <h2 id="totalUsers">106</h2>
+                    <p>Toplam Kullanıcı</p>
+                </div>
+                <div class="stat">
+                    <h2 id="totalCars">464</h2>
+                    <p>Toplam Araç</p>
+                </div>
+                <div class="stat">
+                    <h2 id="dailyVisitors">41</h2>
+                    <p>Günlük Ziyaretçi</p>
+                </div>
+            </div>
+                    </section>
+
+        <section id="users">
+            <i class="fas fa-user"></i>
+            <h1>Kullanıcı Yönetimi</h1>
+            <input type="text" id="searchUser" placeholder="Kullanıcı Ara" />
+            <br><br>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>İsim</th>
+                        <th>E-posta</th>
+                        <th>İşlem</th>
+                    </tr>
+                </thead>
+                <tbody id="userTable">
+                    <!-- Dinamik olarak buraya veri eklenecek -->
+                </tbody>
+            </table>
+ 
+        </section>
+        <button id="showUserForm">Kullanıcı Ekle</button>
+        <form id="userForm" style="display: none;">
+            <input type="text" id="userName" placeholder="İsim" required />
+            <input type="email" id="userEmail" placeholder="E-posta" required />
+            <button type="submit">Ekle</button>
+        </form>
+        <br><br>
+
+
+<section id="cars">
+    <i class="fa fa-car"></i>
+    <h1>Araç Yönetimi</h1>
+    <button id="addCar">Araç Ekle</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Model</th>
+                <th>Plaka</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+            </tr>
+        </thead>
+        <tbody id="carTable">
+            <!-- Araçlar buraya dinamik olarak eklenecek -->
+        </tbody>
+    </table>
+</section>
+
+        
+
+        <section id="settings">
+            <i class="fa-solid fa-gear"></i>
+            <h1>Ayarlar</h1>
+            <p>Admin panelinin temasını değiştirin.</p>
+            <button id="toggleTheme">Koyu Tema</button>
+        </section>
+        
+    </div>
+    <div id="notification" style="display: none; position: fixed; bottom: 20px; right: 20px; background: #1abc9c; color: white; padding: 10px; border-radius: 5px;">İşlem başarılı!</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
